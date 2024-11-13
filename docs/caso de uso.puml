@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+skinparam actorStyle Hollow
+
+:User:
+
+User <|-- Staff
+User <|-- Student
+
+User --> (Authenticate)
+User --> (Reserve a book)
+User --> (Request a new book)
+
+
+(Authenticate) <.. (Invalid username and password) : extends
+(Reserve a book)
+(Request a new book)
+
+:Librarian: as lib
+
+lib -- (Add book item)
+lib -- (Delete book item)
+lib -- (Edit book item)
+
+(Add book item) ..> (Update catalog):include
+(Delete book item) ..> (Update catalog):include
+(Edit book item) ..> (Update catalog):include
+
+@enduml
