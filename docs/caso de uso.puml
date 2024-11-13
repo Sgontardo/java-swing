@@ -25,5 +25,6 @@ lib -- (Edit book item)
 (Add book item) ..> (Update catalog):include
 (Delete book item) ..> (Update catalog):include
 (Edit book item) ..> (Update catalog):include
-
+(Coas)
 @enduml
+
